@@ -5,6 +5,7 @@
 @use 'available-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face {
     font-family: Avenir;
@@ -16,6 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 body {
@@ -70,10 +72,35 @@ body {
     height: 60px;
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
-    background-color: variaveis.$corBotaoAssine;
+    background-color: variaveis.$cordFundoBotaoPrimario;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$cordFundoBotaoPrimario;
+    
+    &:hover {
+        background-color: lighten(variaveis.$cordFundoBotaoPrimario, 5%);
+    }
+    
+    &--secondary {
+        background-color: variaveis.$corFundoBotaoSecundario;
+        border: 1px solid variaveis.$corFundoBotaoSecundario;
+
+        &:hover {
+            background-color: lighten(variaveis.$corFundoBotaoSecundario, 5%);
+        }
+    }
+
+    &--dark {
+        background-color: variaveis.$corFundo;
+        border: 1px solid variaveis.$corTextoPrincipal;
+
+        &:hover {
+            background-color: variaveis.$corTextoPrincipal;
+            color: variaveis.$corFundo;
+        }
+    }
 }
 
 .image-text-section {

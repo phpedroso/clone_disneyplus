@@ -2,6 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('[data-tab-button]');
     const questions = document.querySelectorAll('[data-faq-question]');
 
+    const heroSection = document.querySelector('.hero');
+    const alturaHero = heroSection.clientHeight;
+
+    window.addEventListener('scroll', function() {
+        const posicaoAtual = window.scrollY;
+        if (posicaoAtual < alturaHero) {
+            hideItemMenu();
+        }
+        else {
+            viewItemMenu();
+        }
+    })
+
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function(botao) {
@@ -39,4 +52,14 @@ function hideTabs() {
     for (let i = 0; i < tabsContainer.length; i++) {
         tabsContainer[i].classList.remove('shows__list--is-active');
     }
+}
+
+function hideItemMenu() {
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+function viewItemMenu() {
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
 }
