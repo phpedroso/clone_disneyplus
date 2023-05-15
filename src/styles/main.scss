@@ -38,24 +38,48 @@ body {
 
 .text--big {
     @include text(18px);
+
+    @media (max-width: 768px) {
+        @include title(15px);
+    }
 }
 .text { 
     @include text;
+
+    @media (max-width: 768px) {
+        @include title(14px);
+    }
 }
 .text--small {
     @include text(12px);
+
+    @media (max-width: 768px) {
+        @include title(11px);
+    }
 }
 
 .title--big {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(26px);
+    }
 }
 
 .title {
     @include title;
+
+    @media (max-width: 768px) {
+        @include title(24px);
+    }
 }
 
 .title--small {
     @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(22px);
+    }
 }
 
 .link-text {
@@ -87,6 +111,14 @@ body {
         background-color: variaveis.$corFundoBotaoSecundario;
         border: 1px solid variaveis.$corFundoBotaoSecundario;
 
+        
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 6px 9px;
+            height: 40px;
+            letter-spacing: 0;
+        }
+
         &:hover {
             background-color: lighten(variaveis.$corFundoBotaoSecundario, 5%);
         }
@@ -95,6 +127,14 @@ body {
     &--dark {
         background-color: variaveis.$corFundo;
         border: 1px solid variaveis.$corTextoPrincipal;
+
+            
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 6px 9px;
+            height: 40px;
+            letter-spacing: 0;
+        }
 
         &:hover {
             background-color: variaveis.$corTextoPrincipal;
@@ -108,6 +148,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     img {
         max-width: 100%;
@@ -138,6 +183,12 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
